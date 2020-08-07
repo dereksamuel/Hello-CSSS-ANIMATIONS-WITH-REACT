@@ -3,14 +3,14 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  /* .App-logo {
+    animation: showImg infinite 1s linear;
+  } */
 }
 
 .App-header {
@@ -28,11 +28,65 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes showImg {
+  0% {
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    opacity: .5;
   }
+  50% {
+    opacity: 1;
+    transform: scale(.9);
+  }
+  75% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.showImg {
+}
+
+.showImg-enter {
+/* estado inicial de entrada */
+}
+
+.showImg-enter-active {
+  animation: showImg 1s infinite alternate;
+/* estado final de la entrada */
+}
+
+.showImg-exit {
+/* estado inicial de salida */
+  animation: showImg 1s infinite alternate;
+}
+
+.showImg-exit-active {
+}
+
+.btn {
+  color: white;
+  padding: .5em .8em;
+  border-radius: 5px;
+  box-shadow: inset 0 -.4em rgba(0, 0, 0, .2);
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 5px;
+  font-weight: bold;
+  outline: none;
+  border: none;
+}
+
+.btn.primary {
+  background-color: #7dc800;
+}
+.btn.danger {
+  background-color: #ff463b;
+}
+.btn:active {
+  transform: scale(.9);
+  box-shadow: none;
 }
